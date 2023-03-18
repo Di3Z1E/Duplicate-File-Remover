@@ -1,20 +1,40 @@
-# 📂 Duplicate File Remover 🚀
-## A CS50 Python project
+# Duplicate File Remover
+## CS50 Final Project
+
+###### The Duplicate File Remover is a Python program that searches for duplicate files in a directory and its subdirectories, and optionally removes them.
+
+## Usage:
+##### To use the program, follow these steps:
+
+- ###### Run the duplicate_file_remover.py file using a Python interpreter.
+
+- ###### Enter the directory path to search for duplicate files. The program will search for duplicates in this directory and its - subdirectories.
+
+- ###### Enter the file type to search for duplicates of. For example, if you want to search for duplicate text files, enter ".txt".
+
+- ###### The program will search for duplicates and display a list of all duplicate files found, grouped by size.
 
 
-## Usage 💻
-
-` python duplicate_file_remover.py /path/to/directory `
-
-###### The program will then scan the directory and its subdirectories for duplicate files, and print a list of any duplicate files it finds. It will also ask you whether you want to delete the duplicate files. 💾
+- ###### You will be prompted to confirm whether you want to remove the duplicate files or not. If you choose to remove them, the - program will delete all duplicate files except for the first one in each group.
 
 
-## How it works 🤔
-###### The program works by first getting a list of all files in the directory and its subdirectories, using the os.walk function.
+## Functions
 
-###### It then groups the files by size, using a dictionary where the keys are file sizes and the values are lists of file paths. Any file groups with more than one path are considered to be duplicates.
+The program consists of the following functions:
 
-######  If you choose to delete the duplicate files, the program then removes all files in each duplicate group except the first one, using the os.remove function. 🔍
+- ###### main(): The main function of the program. This function handles user input, calls the other functions, and displays the results.
 
-# Requirements 📋 
-###### The program requires Python 3.5 or later to be installed.
+-  ###### get_files(path, file_type): This function returns a list of all files in the given directory and its subdirectories that match the given file type.
+
+-  ###### get_duplicates(files): This function returns a dictionary of all duplicate files in the given list of files, grouped by size.
+
+-  ###### remove_duplicates(duplicates): This function removes all duplicate files in the given dictionary of duplicates, except for the first one in each group.
+
+
+## Dependencies
+- ###### The program requires Python 3.x to run, and uses the following built-in modules:
+
+`os: For working with the file system.`
+
+`filecmp: For comparing files by contents.`
+
